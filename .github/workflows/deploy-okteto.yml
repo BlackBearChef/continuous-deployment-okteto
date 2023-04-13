@@ -18,7 +18,7 @@ jobs:
       - name: Generate Docker image
         run: mvn spring-boot:build-image -DskipTests
       - name: Login to DockerHub
-        run: docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" -p "${{ secrets.DOKERHUB_TOKEN }}" 
+        run: docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" -p "${{ secrets.DOCKERHUB_TOKEN }}" 
       - name: Push image to DockerHub
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/okteto-anuncios:0.0.1-SNAPSHOT
       - name: Install Okteto CLI
